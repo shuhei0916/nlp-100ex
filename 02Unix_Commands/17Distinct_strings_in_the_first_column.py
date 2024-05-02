@@ -1,10 +1,13 @@
 def main():
     filename = './data/popular-names.txt'
-    print('hehe')
-    with open(filename) as fi:
-        for line in fi:
-            names = {line.split('\t')[0]}
-    print(names)
+    unique_names = set()
+    with open(filename) as f:
+        for line in f:
+            name = line.split(' ')[0]
+            unique_names.add(name)
+            # print(name)
+            # print(type(name))
+    print(unique_names)
 
 
 if __name__ =='__main__':

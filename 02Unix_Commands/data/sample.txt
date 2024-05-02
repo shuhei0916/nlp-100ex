@@ -1,1 +1,7 @@
-hello world, /c/Users/Ito/coding/NLP/02Unix_Commands
+hoge 
+fuga
+hoho
+hehe
+hoge
+hoho
+hehe
