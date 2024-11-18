@@ -1,0 +1,11 @@
+certifi==2024.8.30
+charset-normalizer==3.4.0
+idna==3.10
+ipadic==1.0.0
+mecab-python3==1.0.9
+plac==1.4.3
+requests==2.32.3
+tqdm==4.66.5
+unidic==1.1.0
+urllib3==2.2.3
+wasabi==0.10.1
