@@ -1,5 +1,5 @@
 import unittest
-from morph_analyzer import read_mecab_file
+from src.pos_tagging.mecab_reader import read_mecab_file
 
 class TestMecabParser(unittest.TestCase):
     def test_read_mecab_file(self):
@@ -13,7 +13,7 @@ class TestMecabParser(unittest.TestCase):
         ]
 
         # 実際の出力
-        result = read_mecab_file("neko.txt.mecab")
+        result = read_mecab_file("./data/neko.txt.mecab")
         # 一部の行を検証（完全一致が難しい場合）
         self.assertEqual(result[0][0]['surface'], sample_data[0][0]['surface'])
         self.assertEqual(result[0][2]['base'], sample_data[0][2]['base'])
