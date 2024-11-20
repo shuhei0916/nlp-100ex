@@ -13,17 +13,19 @@ def read_mecab_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         sentence = []
         for line in f:
-            if line.strip() == "EOS":  # 文の終わり
+            line = line.strip()
+            if not line or line == "EOS":  # 空行や文の終わりをスキップ
                 if sentence:
                     sentences.append(sentence)
                     sentence = []
                 continue
-            # 表層形\tその他の情報
+            if '\t' not in line:  # タブがない行はスキップ
+                continue
             surface, features = line.split('\t')
             features = features.split(',')
             morph = {
                 'surface': surface,
-                'base': features[6] if len(features) > 6 else '*',
+                'base': features[6] if len(features) > 6 and features[6] != '*' else surface,  # 基本形が欠けている場合、表層形を使う
                 'pos': features[0],
                 'pos1': features[1] if len(features) > 1 else '*'
             }
