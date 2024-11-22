@@ -6,4 +6,10 @@ def extract_old_characters(s):
 
 
 def interleave_strings(s1, s2):
-    return "パタトクカシーー"
+    return "".join([a + b for a, b in zip(s1, s2)] )
+    # res = ""
+    # for i, j in zip(s1, s2):
+    #     res += i + j
+    # return res
+    
+    
