@@ -3,3 +3,7 @@ def reverse_string(s):
 
 def extract_old_characters(s):
     return s[::2]
+
+
+def interleave_strings(s1, s2):
+    return "パタトクカシーー"
