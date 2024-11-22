@@ -13,3 +13,5 @@ def interleave_strings(s1, s2):
     # return res
     
     
+def get_word_lengths(self):
+    return "hoge"
