@@ -15,3 +15,14 @@ def interleave_strings(s1, s2):
     
 def get_word_lengths(sentence):
     return [len(word.strip(",.")) for word in sentence.split()]
+
+def create_element_dict(sentence):
+    words = sentence.split()
+    one_char_poisition = {1, 5, 6, 7, 8, 9, 15, 16, 19}
+    element_dict = {}
+    for i, word in enumerate(words, start=1):
+        if i in one_char_poisition:
+            element_dict[word[:1]] = i
+        else:
+            element_dict[word[:2]] = i
+    return element_dict
