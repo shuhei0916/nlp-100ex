@@ -1,18 +1,22 @@
 import unittest
 import src.warm_up as wu
 
+# 00. 文字列の逆順
 class TestStringReversal(unittest.TestCase):
     def test_reverse_string(self):
         self.assertEqual(wu.reverse_string("stressed"), "desserts")
-    
+
+# 01. 「パタトクカシーー」
 class TestSubstringExtraction(unittest.TestCase):
     def test_extract_odd_characters(self):
         self.assertEqual(wu.extract_old_characters("パタトクカシーー"), "パトカー")
-        
+       
+# 02. 「パトカー」＋「タクシー」＝「パタトクカシーー」 
 class TestInterleaveStrings(unittest.TestCase):
     def test_interleave_strings(self):
         self.assertEqual(wu.interleave_strings("パトカー", "タクシー"), "パタトクカシーー")
 
+#  03. 円周率
 class TestWordLengths(unittest.TestCase):
     def test_get_word_lengts(self):
         sentence = "Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics"
@@ -20,7 +24,7 @@ class TestWordLengths(unittest.TestCase):
         
         self.assertEqual(wu.get_word_lengths(sentence), expected)
 
-
+# 04. 元素記号
 class TestElementDict(unittest.TestCase):
     def test_create_element_dict(self):
         sentence = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can."
@@ -33,6 +37,15 @@ class TestElementDict(unittest.TestCase):
         result = wu.create_element_dict(sentence)
         self.assertEqual(result, expected_dict)
 
+# 05. n-gram
+class TestNgram(unittest.TestCase):
+    def test_ngram(self):
+        s = "I am an NLPer"
+        expected_char_bigram = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
+        expected_word_bigram = ["I am", "am an", "an NLPer"]
+        
+        self.assertEqual(wu.ngram(s, 2, "char"), expected_char_bigram)
+        self.assertEqual(wu.ngram(s, 2, "word"), expected_word_bigram) 
 
 
 if __name__ == "__main__":
