@@ -16,9 +16,10 @@ class TestInterleaveStrings(unittest.TestCase):
 class TestWordLengths(unittest.TestCase):
     def test_get_word_lengts(self):
         sentence = "Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics"
-        expected = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9]
+        expected = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9]
         
         self.assertEqual(get_word_lengths(sentence), expected)
+
 
 if __name__ == "__main__":
     unittest.main()
