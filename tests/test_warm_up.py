@@ -47,6 +47,30 @@ class TestNgram(unittest.TestCase):
         self.assertEqual(wu.ngram(s, 2, "char"), expected_char_bigram)
         self.assertEqual(wu.ngram(s, 2, "word"), expected_word_bigram) 
 
+        
+# class TestNgramSetOperations(unittest.TestCase):
+#     def test_ngram_set_operations(self):
+#         s1 = "paraparaparadise"
+#         s2 = "paragraph"
+        
+#         bigram_s1 = set(wu.ngram(s1, 2, "char"))
+#         bigram_s2 = set(wu.ngram(s2, 2, "char"))
+        
+#         union = bigram_s1 | bigram_s2
+#         intersection = bigram_s1 & bigram_s2
+#         difference = bigram_s1 - bigram_s2
+        
+#         self.assertIn("se", bigram_s1)
+#         self.assertNotIn("se", bigram_s2)
+        
+#         expected_union = {'ar', 'ad', 'ap', 'di', 'gr', 'is', 'pa', 'ph', 'ra', 'se'}
+#         expected_intersection = {'ar', 'ap', 'pa', 'ra'}
+#         expected_difference = {'ad', 'di', 'is', 'se'}
+        
+#         self.assertEqual(union, expected_union)
+#         self.assertEqual(intersection, expected_intersection)
+#         self.assertEqual(difference, expected_difference)
+
 
 if __name__ == "__main__":
     unittest.main()

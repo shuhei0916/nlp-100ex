@@ -35,5 +35,7 @@ def ngram(sequence, n, mode):
     else:
         raise ValueError("mode must be 'char' or 'word'")
 
+
+
 # def ngram(sequence, n):
 #     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
