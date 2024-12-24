@@ -42,13 +42,13 @@ class TestNgram(unittest.TestCase):
     def test_word_bi_gram(self):
         sentence = "I am an NLPer"
         expected = [["I", "am"], ["am", "an"], ["an", "NLPer"]]
-        actual = wu.ngram(sentence.split(), 2, "word")
+        actual = wu.ngram(sentence.split(), 2)
         self.assertEqual(actual, expected)
         
     def test_char_bi_gram(self):
         sentence = "I am an NLPer"
         expected = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
-        actual = wu.ngram(sentence.replace(" ", ""), 2, "char")
+        actual = wu.ngram(sentence.replace(" ", ""), 2)
         self.assertEqual(actual, expected)
         
         
