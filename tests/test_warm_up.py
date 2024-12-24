@@ -51,6 +51,35 @@ class TestNgram(unittest.TestCase):
         actual = wu.ngram(sentence.replace(" ", ""), 2)
         self.assertEqual(actual, expected)
 
+# 06. 集合
+class TestBigramOperations(unittest.TestCase):
+    def test_union(self):
+        X = set(wu.ngram("paraparaparadise", 2))
+        Y = set(wu.ngram("paragraph", 2))
+        expected = set(["pa", "ar", "ra", "ap", "ad", "di", "is", "se", "ag", "gr", "ph"])
+        
+        self.assertEqual(X | Y, expected)
+        
+    def test_intersection(self):
+        X = set(wu.ngram("paraparaparadise", 2))
+        Y = set(wu.ngram("paragraph", 2))
+        expected = set(["pa", "ra", "ar", "ap"])
+        
+        self.assertEqual(X & Y, expected)
+        
+    def test_difference(self):
+        X = set(wu.ngram("paraparaparadise", 2))
+        Y = set(wu.ngram("paragraph", 2))
+        expected = set(["ad", "di", "is", "se"])
+        
+        self.assertEqual(X - Y, expected)
+        
+    def test_contains(self):
+        X = set(wu.ngram("paraparaparadise", 2))
+        Y = set(wu.ngram("paragraph", 2))
+        
+        self.assertTrue("se" in X)
+        self.assertFalse("se" in Y)
 
 if __name__ == "__main__":
     unittest.main()
