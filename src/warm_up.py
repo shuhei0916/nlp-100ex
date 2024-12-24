@@ -4,7 +4,6 @@ def reverse_string(s):
 def extract_old_characters(s):
     return s[::2]
 
-
 def interleave_strings(s1, s2):
     return "".join([a + b for a, b in zip(s1, s2)] )
     # res = ""
@@ -29,6 +28,3 @@ def create_element_dict(sentence):
 
 def ngram(sequence, n):
     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
-
-# def ngram(sequence, n):
-#     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
