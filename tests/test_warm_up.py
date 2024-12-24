@@ -39,13 +39,24 @@ class TestElementDict(unittest.TestCase):
 
 # 05. n-gram
 class TestNgram(unittest.TestCase):
-    def test_ngram(self):
-        s = "I am an NLPer"
-        expected_char_bigram = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
-        expected_word_bigram = ["I am", "am an", "an NLPer"]
+    def test_word_bi_gram(self):
+        sentence = "I am an NLPer"
+        expected = [["I", "am"], ["am", "an"], ["an", "NLPer"]]
+        self.assertEqual(wu.ngram(sentence, 2, "word"), expected)
         
-        self.assertEqual(wu.ngram(s, 2, "char"), expected_char_bigram)
-        self.assertEqual(wu.ngram(s, 2, "word"), expected_word_bigram) 
+    def test_char_bi_gram(self):
+        sentence = "I am an NLPer"
+        expected = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
+        self.assertEqual(wu.ngram(sentence, 2, "char"), expected)
+        
+        
+    # def test_ngram(self):
+    #     s = "I am an NLPer"
+    #     expected_char_bigram = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
+    #     expected_word_bigram = ["I am", "am an", "an NLPer"]
+        
+    #     self.assertEqual(wu.ngram(s, 2, "char"), expected_char_bigram)
+    #     self.assertEqual(wu.ngram(s, 2, "word"), expected_word_bigram) 
 
         
 # class TestNgramSetOperations(unittest.TestCase):

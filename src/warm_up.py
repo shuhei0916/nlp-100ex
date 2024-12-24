@@ -27,8 +27,9 @@ def create_element_dict(sentence):
             element_dict[word[:2]] = i
     return element_dict
 
-def ngram(sequence, n, mode):
+def ngram(sequence, n, mode):   
     if mode == "char":
+        sequence = sequence.replace(" ", "")
         return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
     elif mode == "word":
         return [sequence.split()[i:i+n] for i in range(len(sequence.split()) - n + 1)]
