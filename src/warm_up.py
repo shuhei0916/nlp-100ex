@@ -29,16 +29,6 @@ def create_element_dict(sentence):
 
 def ngram(sequence, n):
     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
-    # if mode == "char":
-    #     # sequence = sequence.replace(" ", "")
-    #     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
-    # elif mode == "word":
-    #     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
-    #     # return [sequence.split()[i:i+n] for i in range(len(sequence.split()) - n + 1)]
-    # else:
-    #     raise ValueError("mode must be 'char' or 'word'")
-
-
 
 # def ngram(sequence, n):
 #     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]

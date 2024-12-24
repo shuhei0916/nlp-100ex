@@ -50,15 +50,6 @@ class TestNgram(unittest.TestCase):
         expected = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
         actual = wu.ngram(sentence.replace(" ", ""), 2)
         self.assertEqual(actual, expected)
-        
-        
-    # def test_ngram(self):
-    #     s = "I am an NLPer"
-    #     expected_char_bigram = ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"]
-    #     expected_word_bigram = ["I am", "am an", "an NLPer"]
-        
-    #     self.assertEqual(wu.ngram(s, 2, "char"), expected_char_bigram)
-    #     self.assertEqual(wu.ngram(s, 2, "word"), expected_word_bigram) 
 
         
 # class TestNgramSetOperations(unittest.TestCase):
