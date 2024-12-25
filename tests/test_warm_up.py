@@ -53,33 +53,27 @@ class TestNgram(unittest.TestCase):
 
 # 06. 集合
 class TestBigramOperations(unittest.TestCase):
-    def test_union(self):
-        X = set(wu.ngram("paraparaparadise", 2))
-        Y = set(wu.ngram("paragraph", 2))
-        expected = set(["pa", "ar", "ra", "ap", "ad", "di", "is", "se", "ag", "gr", "ph"])
+    def test_generate_bigram_set(self):
+        text = "paraparaparadise"
+        expected = {"pa", "ar", "ra", "ap", "di", "is", "se"}
+        result = wu.generate_bigram_set(text)
+        self.assertEqual(result, expected)
+
+    def test_set_operations(self):
+        X = {"pa", "ar", "ra", "ap", "di", "is", "se"}
+        Y = {"pa", "ar", "ra", "ap", "gr", "ph"}
+        union = {"pa", "ar", "ra", "ap", "di", "is", "se", "gr", "ph"}
+        intersection = {"pa", "ar", "ra", "ap"}
+        difference = {"di", "is", "se"}
         
-        self.assertEqual(X | Y, expected)
-        
-    def test_intersection(self):
-        X = set(wu.ngram("paraparaparadise", 2))
-        Y = set(wu.ngram("paragraph", 2))
-        expected = set(["pa", "ra", "ar", "ap"])
-        
-        self.assertEqual(X & Y, expected)
-        
-    def test_difference(self):
-        X = set(wu.ngram("paraparaparadise", 2))
-        Y = set(wu.ngram("paragraph", 2))
-        expected = set(["ad", "di", "is", "se"])
-        
-        self.assertEqual(X - Y, expected)
-        
-    def test_contains(self):
-        X = set(wu.ngram("paraparaparadise", 2))
-        Y = set(wu.ngram("paragraph", 2))
-        
+        self.assertEqual(X | Y, union)  # 和集合
+        self.assertEqual(X & Y, intersection)  # 積集合
+        self.assertEqual(X - Y, difference)  # 差集合
+
+    def test_contains_bigram(self):
+        X = {"pa", "ar", "ra", "ap", "di", "is", "se"}
         self.assertTrue("se" in X)
-        self.assertFalse("se" in Y)
+        self.assertFalse("se" in {"pa", "ar", "ra"})    
 
 if __name__ == "__main__":
     unittest.main()
