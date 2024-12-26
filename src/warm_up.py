@@ -30,5 +30,6 @@ def ngram(sequence, n):
     return [sequence[i:i+n] for i in range(len(sequence) - n + 1)]
 
 def generate_bigram_set(text):
-    return set()
-    # return {text[i:i+2] for i in range(len(text) - 1)}
+    text = text.replace(" ", "")
+    res = {text[i:i+2] for i in range(len(text) - 1)}
+    return res

@@ -55,7 +55,7 @@ class TestNgram(unittest.TestCase):
 class TestBigramOperations(unittest.TestCase):
     def test_generate_bigram_set(self):
         text = "paraparaparadise"
-        expected = {"pa", "ar", "ra", "ap", "di", "is", "se"}
+        expected = {"pa", "ar", "ra", "ap", "di", "is", "se", "ad"}#  {"pa", "ar", "ra", "ap", "di", "is", "se"}
         result = wu.generate_bigram_set(text)
         self.assertEqual(result, expected)
 
