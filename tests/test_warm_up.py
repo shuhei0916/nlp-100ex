@@ -74,6 +74,17 @@ class TestBigramOperations(unittest.TestCase):
         X = {"pa", "ar", "ra", "ap", "di", "is", "se"}
         self.assertTrue("se" in X)
         self.assertFalse("se" in {"pa", "ar", "ra"})    
+        
+        
+# 07. テンプレートによる文生成
+class TestTemplateString(unittest.TestCase):
+    def test_template_string(self):
+        x = 12
+        y = "気温"
+        z = 22.4
+        expected = "12時の気温は22.4"
+        
+        self.assertEqual(wu.template_string(x, y, z), expected)
 
 if __name__ == "__main__":
     unittest.main()
