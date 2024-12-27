@@ -33,3 +33,6 @@ def generate_bigram_set(text):
     text = text.replace(" ", "")
     res = {text[i:i+2] for i in range(len(text) - 1)}
     return res
+
+def template_string(x, y, z):
+    return f"{x}時の{y}は{z}"
