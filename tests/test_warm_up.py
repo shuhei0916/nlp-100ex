@@ -86,5 +86,21 @@ class TestTemplateString(unittest.TestCase):
         
         self.assertEqual(wu.template_string(x, y, z), expected)
 
+# 08. 暗号文
+class TestCipher(unittest.TestCase):
+    def test_cipher(self):
+        text = "the quick brown fox jumps over the lazy dog"
+        expected = "gsv jfrxp yildm ulc qfnkh levi gsv ozab wlt"
+        self.assertEqual(wu.cipher(text), expected)
+        
+        self.assertEqual(wu.cipher(expected), text)
+
+# 09. Typoglycemia
+class TestTypoglycemia(unittest.TestCase):
+    def test_short_word(self):
+        sentence = "I am an"
+        self.assertEqual(wu.typoglycemia(sentence), "I am an")
+    
+
 if __name__ == "__main__":
     unittest.main()
