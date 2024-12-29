@@ -36,3 +36,13 @@ def generate_bigram_set(text):
 
 def template_string(x, y, z):
     return f"{x}時の{y}は{z}"
+
+def cipher(text):
+    result = []
+    for char in text:
+        if char.islower():
+            result.append(chr(219 - ord(char)))
+        else:
+            result.append(char)
+    return "".join(result)
+    # return "".join([chr(219 - ord(c)) if c.islower() else c for c in text])

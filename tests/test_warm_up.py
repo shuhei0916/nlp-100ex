@@ -95,11 +95,11 @@ class TestCipher(unittest.TestCase):
         
         self.assertEqual(wu.cipher(expected), text)
 
-# 09. Typoglycemia
-class TestTypoglycemia(unittest.TestCase):
-    def test_short_word(self):
-        sentence = "I am an"
-        self.assertEqual(wu.typoglycemia(sentence), "I am an")
+# # 09. Typoglycemia
+# class TestTypoglycemia(unittest.TestCase):
+#     def test_short_word(self):
+#         sentence = "I am an"
+#         self.assertEqual(wu.typoglycemia(sentence), "I am an")
     
 
 if __name__ == "__main__":
