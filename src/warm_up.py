@@ -1,3 +1,5 @@
+import random
+
 def reverse_string(s):
     return s[::-1]
 
@@ -48,4 +50,13 @@ def cipher(text):
     # return "".join([chr(219 - ord(c)) if c.islower() else c for c in text])
 
 def typoglycemia(text):
-    return "hoge"
+    def shuffle_word(word):
+        if len(word) <= 4:
+            return word
+        middle = list(word[1:-1])
+        random.shuffle(middle)
+        return word[0] + ''.join(middle) + word[-1]
+
+    words = text.split()
+    shuffled_words = [shuffle_word(word) for word in words]
+    return ' '.join(shuffled_words)
