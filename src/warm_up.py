@@ -46,3 +46,6 @@ def cipher(text):
             result.append(char)
     return "".join(result)
     # return "".join([chr(219 - ord(c)) if c.islower() else c for c in text])
+
+def typoglycemia(text):
+    return "hoge"
