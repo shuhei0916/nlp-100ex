@@ -97,10 +97,17 @@ class TestCipher(unittest.TestCase):
 
 # 09. Typoglycemia
 class TestTypoglycemia(unittest.TestCase):
-    # def test_short_word(self):
-    #     sentence = "I am an"
-    #     self.assertEqual(wu.typoglycemia(sentence), "I am an")
+    def test_short_word(self):
+        sentence = "I am an"
+        self.assertEqual(wu.typoglycemia(sentence), "I am an")
     
+    def test_typoglycemia_single_word(self):
+        word = "reading"
+        result = wu.typoglycemia(word)
+        self.assertTrue(result.startswith("r") and result.endswith("g"))
+        self.assertEqual(len(result), len(word))
+        self.assertNotEqual(result[1:-1], "eadin")  # 中間部分は異なる順序になるべき
+
     def test_typoglycemia(self):
         text = "I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
         result = wu.typoglycemia(text)
