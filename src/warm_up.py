@@ -59,4 +59,6 @@ def typoglycemia(text):
 
     words = text.split()
     shuffled_words = [shuffle_word(word) for word in words]
-    return ' '.join(shuffled_words)
+    res = ' '.join(shuffled_words)
+    print(res)
+    return res
