@@ -71,3 +71,13 @@ def shuffle_and_check(word):
         shuffled_middle = ''.join(random.sample(middle, len(middle)))
         if shuffled_middle == original_middle:
             return seed, shuffled_middle
+    return None, None
+
+if __name__ == '__main__':
+    word = "reading"
+    seed, shuffled = shuffle_and_check(word)
+    if seed:
+        print(f"Found matching seed: {seed}")
+        print(f"Shuffled result: {shuffled}")
+    else:
+        print("No matching seed found in range")
