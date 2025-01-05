@@ -62,3 +62,12 @@ def typoglycemia(text):
     res = ' '.join(shuffled_words)
     print(res)
     return res
+
+def shuffle_and_check(word):
+    middle = list(word[1:-1])
+    original_middle = ''.join(middle)
+    for seed in range(1, 1000):
+        random.seed(seed)
+        shuffled_middle = ''.join(random.sample(middle, len(middle)))
+        if shuffled_middle == original_middle:
+            return seed, shuffled_middle
