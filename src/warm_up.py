@@ -49,19 +49,22 @@ def cipher(text):
     return "".join(result)
     # return "".join([chr(219 - ord(c)) if c.islower() else c for c in text])
 
-def typoglycemia(text):
+def typoglycemia(sentence):
     def shuffle_word(word):
         if len(word) <= 4:
             return word
         middle = list(word[1:-1])
-        random.shuffle(middle)
-        return word[0] + ''.join(middle) + word[-1]
+        original_middle = ''.join(middle)
+        while True:
+            random.shuffle(middle)
+            shuffled_middle = ''.join(middle)
+            if shuffled_middle != original_middle:
+                break
+        return word[0] + shuffled_middle + word[-1]
+    
+    words = sentence.split()
+    return ' '.join([shuffle_word(word) for word in words])
 
-    words = text.split()
-    shuffled_words = [shuffle_word(word) for word in words]
-    res = ' '.join(shuffled_words)
-    print(res)
-    return res
 
 def shuffle_and_check(word):
     middle = list(word[1:-1])

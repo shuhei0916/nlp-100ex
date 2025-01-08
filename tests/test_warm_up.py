@@ -104,7 +104,6 @@ class TestTypoglycemia(unittest.TestCase):
     
     def test_typoglycemia_single_word(self):
         word = "reading"
-        random.seed(121)
         result = wu.typoglycemia(word)
         self.assertTrue(result.startswith("r") and result.endswith("g"))
         self.assertEqual(len(result), len(word))
